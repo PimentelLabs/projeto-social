@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+body {
+    background: url("../images/pexels-pixelcop-2680270.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+}
+
+section#telefone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Usando VMIN para o telefone se ajustar à menor dimensão da tela */
+    height: 80vmin; /* Ocupará 80% da altura ou largura da tela (o que for menor) */
+    width: 40vmin;  /* Largura proporcional à altura (aprox. 425/211) */
+
+    /* Adicione max-height para evitar que fique gigante em telas muito grandes */
+    max-height: 637px;
+    max-width: 316px; /* Valores 1.5x os originais, por exemplo */
+
+    background: url("../images/frame-iphone.png") no-repeat;
+    background-size: contain; /* 'contain' garante que a imagem do frame caiba perfeitamente */
+}
+
+iframe#tela {
+    position: relative;
+    
+    /* Posição e tamanho em PORCENTAGEM para se ajustar ao pai (#telefone) */
+    top: 13%;    /* Original: 55px / 425px de altura total ≈ 13% */
+    left: 7.2%;  /* Original: 15px / 211px de largura total ≈ 7.2% */
+    width: 85.6%;  /* Original: 181px / 211px de largura total ≈ 85.6% */
+    height: 75%;   /* Original: 320px / 425px de altura total ≈ 75% */
+}
