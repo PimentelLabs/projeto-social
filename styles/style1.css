@@ -22,30 +22,49 @@ main {
     height: 100vh;
 }
 
+/* --- MUDANÇAS AQUI --- */
+
 section#telefone {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    /* Usando VMIN para o telefone se ajustar à menor dimensão da tela */
-    height: 80vmin; /* Ocupará 80% da altura ou largura da tela (o que for menor) */
-    width: 40vmin;  /* Largura proporcional à altura (aprox. 425/211) */
+    /* Aumentado em 25% */
+    height: 100vmin; /* Era 80vmin * 1.25 = 100vmin */
+    width: 50vmin;  /* Era 40vmin * 1.25 = 50vmin (mantendo a proporção 2:1) */
 
-    /* Adicione max-height para evitar que fique gigante em telas muito grandes */
-    max-height: 637px;
-    max-width: 316px; /* Valores 1.5x os originais, por exemplo */
+    /* Ajustando max-height e max-width para o novo tamanho, se quiser manter limites */
+    /* Se você quiser que ele possa ocupar a tela toda em monitores grandes, pode remover esses limites */
+    max-height: 796px; /* Era 637px * 1.25 */
+    max-width: 395px;  /* Era 316px * 1.25 */
 
     background: url("../images/frame-iphone.png") no-repeat;
-    background-size: contain; /* 'contain' garante que a imagem do frame caiba perfeitamente */
+    background-size: contain;
 }
 
 iframe#tela {
     position: relative;
-    
-    /* Posição e tamanho em PORCENTAGEM para se ajustar ao pai (#telefone) */
-    top: 13%;    /* Original: 55px / 425px de altura total ≈ 13% */
-    left: 7.2%;  /* Original: 15px / 211px de largura total ≈ 7.2% */
-    width: 85.6%;  /* Original: 181px / 211px de largura total ≈ 85.6% */
-    height: 75%;   /* Original: 320px / 425px de altura total ≈ 75% */
+    top: 13%;
+    left: 7.2%;
+    width: 85%;
+    height: 75%;
+}
+
+section#redes-sociais {
+    text-align: right;
+}
+
+section#redes-sociais img {
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.39);
+    box-sizing: border-box;
+}
+
+section#redes-sociais img:hover {
+    border: 2px solid rgba(0, 0, 0, 0.39);
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
 }
